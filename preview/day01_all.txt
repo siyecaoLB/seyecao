@@ -1,0 +1,171 @@
+1.行业
+2.五个阶段
+3.linux命令行介绍/文件目录管理
+4.目录介绍 cd / pwd
+5.github服务端使用
+6.ssh / poweroff / reboot
+==============================
+1.行业
+IT产品：
+	游戏/app/微信小程序/web网页/。。。
+岗位：
+	产品部门：
+		定位产品
+	UI:
+		网页外观样式
+	开发：
+		web
+		java
+		c++
+	测试：
+	云计算：
+		网络：
+		系统：
+		DBA：
+		安全：
+		架构师：
+			
+2.五个阶段：
+	第一个阶段：
+		牛犇老师：云计算基础
+		王凯老师：网络
+	第二个阶段：
+		丁明一老师：云计算运维
+			shell脚本
+			系统运维
+			集群
+	第三个阶段：
+		庞丽静老师：DBA
+			Mysql数据库
+			nosql：
+				redis
+				mongodb
+	第四个阶段： devops
+		李欣老师：云计算：虚拟化
+			openstack
+			docker
+			ansible
+			监控
+	第五个阶段：
+		张志刚老师：
+			python 自动化运维开发
+3.linux命令行介绍
+	未列出 --> root --> teacher.com
+		ctrl + alt + f2
+		ctrl + alt + f1
+	[ 用户@主机名 目录名 ]  #
+									$
+	ls : 列出当前文件夹里的内容
+		-l : long 显示完整的格式：如大小/时间
+		-d : 查看目录本身：基本信息
+	touch : 创建文件 + /opt/文件的名字
+	rm : 删除 + 文件的名字
+	
+	mkdir : 创建目录 + 目录的名字
+		-p : 连续创建多级目录
+		mkdir -p /a/b/c/d
+
+	rm    -r  : 删除目录 + 目录的名字 
+			-f   : 删除文件或目录，不要提示
+	
+	cd : change directory切换目录
+		+  目录名
+		+   ..      返回到上一层目录
+		cd  : 回家,家目录
+	pwd :  查看当前在哪个文件夹[绝对位置]
+	cat : 查看一个文件: 适合小文件
+
+	vim : 写  + 文件
+		i （插入） --> Esc  --> :q!   ==> quit  [不保存退出]
+		i  (插入)   --> Esc  --> :wq ==>write quit [保存退出]
+
+	目录：
+		/ : 根  
+			root : 管理员的家
+			home: 普通用户的家目录
+			opt: 文件测试（个人的东西）
+			...
+
+操作：
+	进入到/ 下， 再进入到opt下,
+	创建文件夹a,进入到a，创建文件夹b，
+	进入到b，创建文件a.txt和b.txt
+
+==========================================
+
+	mkdir   a   b
+	mkdir  -p   a/b	连续创建多级目录
+	windows 和 linux之间的比较
+					windows					linux
+	方向			 客户端						服务端
+	安全性		 低								高
+	性能			 低								高
+	运行时间		 短								年
+
+1. unix :  --> linux(1991) --> 1992windows
+	linux: 
+		红帽系列
+			redhat
+			centos
+			社区版
+			...
+		debian系列
+			ubuntu
+			debian 
+			....
+
+2. github ==》全球最大的社交平台
+	笔记本 
+	电子档
+	gitlab/svn/ftp
+	github / CSDN 
+3.linux 基础命令
+	linux: 内核  + 周边的软件
+	hostname : 查看主机名
+		+ 名字：修改主机名
+    vim	/etc/hostname 
+		nsd1903.tedu.cn
+	cat   /etc/redhat-release : 查看操作系统版本
+	uname   -r   查看内核
+
+	rht-vmctl		 reset		 classroom
+	rht-vmctl 		 reset 		 server
+	server --> root    /    redhat
+	
+	poweroff
+	reboot
+4. ip 地址：
+	32个0/1 ==> 十进制  176.4.16.101
+	ifconfig : linux查看地址的方式
+		inet: 后面就是ip地址
+	ipconfig : windows 查看地址的方式
+5. ssh root@对方ip地址
+	(yes/no)>yes
+	(password)>对方密码
+	exit 退出
+
+
+
+
+
+综合练习：
+	1.远程到对方电脑，在对方电脑桌面上创建文件夹a，在a下创建文件夹b，进入b创建两个文件a.txt,b.txt，进入a.txt，写入"123456"不保存退出，
+   2.查看对方主机名，并将主机名写入到b.txt
+   3.查看对方操作系统和版本号
+   4.reboot重启
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
