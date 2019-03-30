@@ -1,0 +1,204 @@
+﻿昨日回顾：
+	行业
+	阶段
+		基础
+		运维
+		数据库
+		云架构
+		开发
+	基础命令
+		ls
+			-l 
+			-d
+		touch 
+			touch a.txt
+			touch /opt/a.txt b.txt
+		cat
+			cat a.txt
+			cat /opt/a.txt
+		mkdir
+			mkdir demo
+			mkdir demo1 demo2
+			mkdir -p demo1/demo2 demo3
+		hostname
+			查看主机名
+			hostname 名称  ==>临时
+			/etc/hostname
+		vim
+			vim /opt/a.txt
+				i(插入) --> Esc --> :q! 
+				i(插入) --> Esc --> :wq
+		poweroff 关机
+		reboot 重启
+		查看ip地址
+			ifconfig linux
+			ipconfig windows
+		rm 
+			rm a.txt --> y
+			rm -r 目录
+			rm -rf/f a.txt/demo
+			rm /opt/a.txt /etc/b.txt
+		/ 
+			opt
+			root
+				root/桌面
+			home
+				lisi
+				zhangsan
+				Student
+			etc
+				配置文件
+				hostname
+				passwd
+			dev 设备信息
+		ctrl + alt + f2..6
+		ctrl + alt + f1
+		[ 用户名@主机名 目录~ ] #/$
+		ssh 用户名@ip地址
+		
+		
+=================================
+补充
+	ls  -a  : 查看隐藏的文件
+		touch .a.txt
+		mkdir .movie
+	vim
+		Esc -> : set nu  : 添加行号
+		Esc -> : set nonu : 取消行号
+	ctrl + shift + t
+	firefox &
+	ssh -X root@172.25.0.11
+1.yum源管理使用
+	linux = 内核 + 周边应用[包]
+	/etc/yum.repos.d/xx.repo 软件源配置文件
+	[root@room9pc01 yum.repos.d]# cat CentOS.repo
+		[CentOS7]   ==> 标题/名称
+		name=CentOS 7  ==> 描述信息
+		baseurl=file:///var/ftp/centos-1804
+		enabled=1 ==> 启用，1启用，0 不启用
+		gpgcheck=0 ==> 
+			是否检测完整性，0不检测，1检测
+	baseurl:
+		file:// 本地
+		http:// 网站
+		ftp://  ftp
+	file:// 本地 /var/ftp/centos-1804
+	yum : 管理软件包
+		yum list ： 列出所有的软件包
+		yum repolist : 总共有多少软件包
+		yum install 包名 [包2...] :
+						安装一个软件包
+		]# yum install httpd
+		]# yum -y install httpd
+		yum remove 包名: 删除一个软件包
+	rpm : 查看包有没有装
+		rpm -qa 包名 : 
+				如果安装了，就显示完整包名
+		rpm -ql 包名：
+				安装这个包，产生的新的文件
+3.git 本地仓库，关联远程仓库
+	]# ssh-keygen -t rsa -C "xxx@qq.com"
+		overwrite> y
+	]# cd /root/.ssh/
+	]# cat id_rsa.pub
+		ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/p8VCyHSZhf/kHb45b3XaPT7hKDU9YkFF/22b9VLawnCPTfX8MZ9CjTlIvharZSYRFCM+eANsD2dZTfIapnuAS9WK56ii+wMmzxCvzwYh6nllbrB0t/xQartgJkvT2nAkRUpgR7Tq2h55ErwosLcEZZC3Xq1spLjwBZ4FKlInEQ6Ly3xEZC+2CdGsv9DgpP/yakgMov7rU1uUv6xzGwVVwP5OV3QsDLLuzFZfE1LNJSjuBe1KiTzpokrfcsBR6CFNOoW6oOAipsT5vGHwdTjVqN92zNYLuOPIW3cFcDUQKIpeK7S0d6zC0nLL4HQrRf50UDWtOVgkDRL1KD3PeGGB xxx@qq.com
+	
+	]# cd /opt
+	]# mkdir step01    # 创建仓库文件夹
+	]# cd step01/
+	]# git init	   # 初始化仓库信息
+	]# vim README.md   # 创建仓库描述文件
+		这是我云计算的第一个部分
+	]# git status	   # 查看仓库状态
+
+	]# git add README.md	# 将文件添加到本地仓库 [装车]
+	]# git commit -m "这是我的第一个文件"
+	]# git config --global user.name "MX-Steve"
+	]# git config --global user.email "xxx@qq.com"
+	]# git commit -m "这是我的第一个文件"
+	
+	]# git remote rename origin old-origin
+	]# git remote add origin git@github.com:MX-Steve/nsd1903_step01.git
+	]# git push -u origin master
+排错：
+	注意：文件夹/远程的密钥名称/仓库名称都必须是英文，不能有空格，
+建错了可以删除重建，
+	如果提示无法读到远程仓库，执行以下命令
+	]# ssh-agent   ==》该命令返回三行代码，粘贴这三行代码在命令行上运行
+	然后再执行下面命令
+	]# git push -u origin master
+	提示有100%的代表成功
+	
+		
+===================================================================
+	cp : 复制
+	     cp  -r 源文件  目录  # 复制/拷贝
+	     cp /root/桌面/day01_all.txt     /opt/step01/preview/
+	     cd /opt/step01/preview
+	     ls
+	cd /opt/step01
+	git add .
+	git commit -m "随便写"
+	git push -u origin master
+		ssh-agent
+		git push -u origin master	
+	
+	mv : 移动
+		]# mv day01.txt /opt/
+		]# ls /opt
+
+	head : 看文件前几行
+		head -数字 a.txt
+	tail : 看文件结尾几行
+		tail -数字 a.txt
+	[root@A etc]# head -3 passwd
+		root:x:0:0:root:/root:/bin/bash
+		bin:x:1:1:bin:/bin:/sbin/nologin
+		daemon:x:2:2:daemon:/sbin:/sbin/nologin
+
+	[root@A etc]# tail -2 passwd
+		nsd07:x:1012:1014::/home/nsd07:/bin/bash
+		dockerroot:x:989:983:Docker User:/var/lib/docker:/sbin/nologin
+
+	|  : 管道 
+		命令1 | 命令2  ： 将前一个命令的结果传递给第二个命令做参数使用
+	
+	[root@room9pc01 opt]# head -5 passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+
+	[root@room9pc01 opt]# head -5 passwd | tail -3 
+
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+
+	[root@room9pc01 opt]# tail -5 passwd | head -3 
+
+tcpdump:x:72:72::/:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+named:x:25:25:Named:/var/named:/sbin/nologin
+
+	]# ifconfig  | head -2 | tail -1
+	]# echo 123456  >  a.txt   # 会覆盖原来的内容
+	]# echo 123456 >> a.txt	   # 追加写入到文件中
+
+		
+		
+		
+		
+练习：
+	1. 一个文件一共有10行，看文件第7至9行		
+	2. 查看本机ip地址，把第二行[带ip]内容存入到自己仓库的
+		preview文件夹里，叫做ip.txt	
+	3. 将/etc/yum.repos.d/CentOS.repo拷贝到自己的仓库目录下，
+		将其改名为 dvd.repo
+	4.将仓库里的内容上传到远程仓库
+		
+		
+		
+		
+		

@@ -1,0 +1,5 @@
+[CentOS7]
+name=CentOS 7
+baseurl=file:///var/ftp/centos-1804
+enabled=1
+gpgcheck=0
