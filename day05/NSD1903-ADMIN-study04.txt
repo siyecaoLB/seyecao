@@ -1,0 +1,55 @@
+1.创建用户的命令是什么？常用的选项都有那些？
+　　　　useradd     -u -s -d -G
+
+2.非交互式lisi设置密码为123  请写出该命令
+　echo  123  |  passwd --stdin  lisi
+
+3.请写出 存放用户 基本信息  的配置文件
+    /etc/passwd
+
+4.修改已存在用户属性的命令？
+     usermod
+
+5.请写出 禁止用户登录系统的解释器程序
+       /sbin/nologin
+
+6.将harry用户加入tedu组，请写出该命令
+    gpasswd  -a  harry  tedu
+
+
+7.请写出 组账号 基本信息 配置文件 
+    /etc/group
+
+8.将/usr/local进行归档及压缩为/root/file.tar.gz请写出该命令
+   tar -zcf  /root/file.tar.gz  /usr/local
+
+9.将/root/file.tar.gz进行解压缩到/opt目录下  请写出该命令
+   tar -xf  /root/file.tar.gz  -C  /opt
+
+
+10.存放用户基本信息的配置文件,每一部分的含义是什么？
+ 用户名:密码占位符:UID:基本组的GID:用户描述信息:家目录:解释器
+
+
+11.删除用户与删除组的命令是什么？
+　 userdel  
+   groupdel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
