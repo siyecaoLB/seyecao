@@ -1,0 +1,47 @@
+1.vim编辑器有几种工作模式,分别是什么？            
+        3  命令模式   插入模式   末行模式
+
+2.利用rpm命令检测firefox是否安装，请写出该命令？
+       rpm  -q  firefox
+
+3.利用yum安装httpd软件，请写出该命令？
+      yum -y install httpd
+
+4.显示/etc/passwd中包含bin的行，请写出该命令？
+     grep  bin  /etc/passwd
+
+5.yum客户端配置文件放在什么路径下？具体都有哪些字段？  
+     /etc/yum.repos.d/*.repo
+       []   name  baseurl   enabled  gpgcheck
+
+6.划分  分区的命令是什么？
+    fdisk
+
+7.MBR常见的分区类型有那三种？
+      主分区   扩展分区  逻辑分区
+
+8.刷新  新的分区表命令是什么？
+     partprobe
+
+9.格式化ext4文件系统的命令？格式化xfs文件系统的命令？
+     mkfs.ext4   mkfs.xfs
+
+10.查看分区的文件系统类型的命令是什么？
+        blkid   
+
+11.在开机状态下，检测/etc/fstab文件中是否书写正确，命令是？
+          mount -a
+
+12.查看正在挂载的分区，使用情况的命令是什么？
+           df  -h
+
+
+13.开机挂载配置文件六个字段分别为什么？
+   设备路径   挂在点     类型   参数   备份标记  检测顺序
+
+
+
+
+
+
+
